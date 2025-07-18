@@ -208,7 +208,7 @@ async def on_command_error(ctx, error):
         await ctx.send(f"❓ Faltou um argumento. Use `!help {ctx.command.name}` para ver como usar.")
 
 # --- Executando o Bot ---
-BOT_TOKEN = 'MTM3OTkwMDY4MDQ2MTg3NzM3OQ.GHUgEU.ZojLYPediR5UDNcOpoawPkJRrdODqaDu935-LI'
+BOT_TOKEN = 'SEU_TOKEN_AQUI'
 if BOT_TOKEN == "SEU_TOKEN_AQUI":
     print("ERRO: Por favor, substitua 'SEU_TOKEN_AQUI' pelo token real do seu bot.")
 else:
