@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from keep_alive import keep_alive
 import asyncio
 import json  # Importa a biblioteca para manipulação de JSON
 import random  # Importa a biblioteca para rolar dados
@@ -259,6 +260,7 @@ async def on_command_error(ctx, error):
             f"❓ Faltou um argumento. Use `!help {ctx.command.name}` para ver como usar."
         )
 
+keep_alive()  # Inicia o servidor Flask para manter o bot online
 
 # --- Executando o Bot ---
 BOT_TOKEN = os.getenv('DISCORD_TOKEN')
