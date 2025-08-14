@@ -83,7 +83,7 @@ async def on_member_join(member: discord.Member):
     embed = discord.Embed(
         title=f"Bem-vindo(a) à aventura, {member.name}!",
         description=
-        f"Eu sou O Mago, o guardião deste servidor de RPG. Para começarmos, por favor, responda a esta mensagem enviando **apenas o nome do seu personagem**.\n\n*Você tem 5 minutos para responder.*",
+        f"Eu sou O Mago, o guardião deste servidor de RPG. Para começarmos, por favor, responda a esta mensagem enviando **apenas o seu nome**.\n\n*Você tem 5 minutos para responder.*",
         color=discord.Color.purple())
     embed.set_thumbnail(url=member.display_avatar.url)
     embed.set_footer(text="A sua jornada está prestes a começar...")
@@ -124,7 +124,9 @@ async def on_member_join(member: discord.Member):
     overwrites = {
         guild.default_role: discord.PermissionOverwrite(read_messages=False),
         member: discord.PermissionOverwrite(read_messages=True,
-                                            send_messages=True),
+                                            send_messages=True,
+                                            manage_messages=True,
+                                            manage_channels=True),
         guild.me: discord.PermissionOverwrite(read_messages=True)
     }
     private_channel = await guild.create_text_channel(
